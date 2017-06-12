@@ -4,4 +4,4 @@ version = "0.1.0"
 authors = ["Michał Kalbarczyk <fazibear@gmail.com>"]
 
 [dependencies]
-sdl2 = "0.29.0"
+sdl2 = "0.30"
