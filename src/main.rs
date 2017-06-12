@@ -21,11 +21,11 @@ fn main() {
             Err(err)   => panic!("failed to create window: {}", err)
         };
 
-    let mut renderer = match window
-        .renderer()
+    let mut canvas = match window
+        .into_canvas()
         .build() {
-            Ok(renderer) => renderer,
-            Err(err) => panic!("failed to create renderer: {}", err)
+            Ok(canvas) => canvas,
+            Err(err) => panic!("failed to create canvas: {}", err)
         };
 
     let mut rect = Rect::new(10, 10, 10, 10);
@@ -56,11 +56,11 @@ fn main() {
             }
         }
 
-        let _ = renderer.set_draw_color(black);
-        let _ = renderer.clear();
-        let _ = renderer.set_draw_color(white);
-        let _ = renderer.fill_rect(rect);
-        let _ = renderer.present();
+        let _ = canvas.set_draw_color(black);
+        let _ = canvas.clear();
+        let _ = canvas.set_draw_color(white);
+        let _ = canvas.fill_rect(rect);
+        let _ = canvas.present();
     };
 
     #[cfg(target_os = "emscripten")]
